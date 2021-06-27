@@ -1,4 +1,4 @@
-package com.xhh.DesignPatterns.utils;
+package com.xhh.utils;
 
 import javax.xml.parsers.*;
 

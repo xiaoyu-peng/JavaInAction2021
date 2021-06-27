@@ -1,7 +1,7 @@
 package com.xhh.DesignPatterns.Creation_Mode_6.D001_SimpleFactoryPatterns.ex_chart;
 
 
-import com.xhh.DesignPatterns.utils.XMLUtil;
+import com.xhh.utils.XMLUtil;
 
 class TestClient {
     public static void main(String args[]) {

@@ -1,6 +1,6 @@
 package com.xhh.DesignPatterns.Creation_Mode_6.D002_FactoryPatterns.ex_logger;
 
-import com.xhh.DesignPatterns.utils.XMLUtil;
+import com.xhh.utils.XMLUtil;
 
 /**
  * 工厂模式测试类
