@@ -1,4 +1,4 @@
-package com.xhh.DesignPatterns.D001_SimpleFactory.ex_chart;
+package com.xhh.DesignPatterns.D001_SimpleFactoryPatterns.ex_chart;
 
 /**
  * 图表工厂类：工厂类

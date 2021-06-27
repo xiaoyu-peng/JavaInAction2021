@@ -1,4 +1,4 @@
-package com.xhh.DesignPatterns.D001_SimpleFactory.ex_operation;
+package com.xhh.DesignPatterns.D001_SimpleFactoryPatterns.ex_operation;
 
 /**
  * 减法计算

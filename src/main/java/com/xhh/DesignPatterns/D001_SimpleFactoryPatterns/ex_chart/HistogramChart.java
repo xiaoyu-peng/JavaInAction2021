@@ -1,4 +1,4 @@
-package com.xhh.DesignPatterns.D001_SimpleFactory.ex_chart;
+package com.xhh.DesignPatterns.D001_SimpleFactoryPatterns.ex_chart;
 
 /**
  * 具体产品类：柱形图

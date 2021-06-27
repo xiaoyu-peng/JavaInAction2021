@@ -1,4 +1,4 @@
-package com.xhh.DesignPatterns.D001_SimpleFactory.ex_operation;
+package com.xhh.DesignPatterns.D001_SimpleFactoryPatterns.ex_operation;
 
 /**
  * TODO 简单工厂模式（Simple Factory Pattern）：
