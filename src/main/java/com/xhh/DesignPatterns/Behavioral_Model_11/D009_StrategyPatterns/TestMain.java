@@ -1,4 +1,4 @@
-package com.xhh.DesignPatterns.Behavioral_Model_11.D002_StrategyPatterns;
+package com.xhh.DesignPatterns.Behavioral_Model_11.D009_StrategyPatterns;
 
 public class TestMain {
 
