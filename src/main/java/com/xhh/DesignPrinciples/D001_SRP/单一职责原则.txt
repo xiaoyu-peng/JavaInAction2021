@@ -1,0 +1,13 @@
+单一职责原则(Single Responsibility Principle, SRP)：一个类只负责一个功能领域中的相应职责【就一个类而言，应该只有一个引起它变化的原因】。
+
+单一职责原则是实现高内聚、低耦合的指导方针。
+
+Single Responsibility Principle: There should never be more than one reason for a class to change.
+
+
+优点：
+    1. 类的复杂性降低
+    2. 可读性提高
+    3. 可维护性提高
+    4. 变更引起的风险降低
+

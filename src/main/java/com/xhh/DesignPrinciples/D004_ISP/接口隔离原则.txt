@@ -1,0 +1,16 @@
+接口隔离原则(Interface Segregation Principle, ISP)，定义为：
+    1) Clients should not be forced to depend upon interfaces that they don’t use. （客户端不应该依赖它不需要的接口。）
+    2) The dependency of one class to another one should depend on the smallest possible interface. （类间的依赖关系应该建立在最小的接口上。）
+
+TODO 建立单一接口，不要建立臃肿庞大的接口，即接口尽量细化，同时接口中的方法尽量少。
+
+注意事项：
+    * 接口尽量小 （根据接口隔离原则拆分接口时，首先需要满足单一职责原则）
+
+    * 接口要高内聚（要求接口中尽量少公布public方法，接口是对外的承诺，承诺越少对系统的开发越有利，变更的风险越小，有利于降低成本）
+
+    * 接口定制服务（采用定制服务要求：只提供访问者需要的方法）
+
+    * 接口设计粒度是有限度的，不是越小越好。
+
+

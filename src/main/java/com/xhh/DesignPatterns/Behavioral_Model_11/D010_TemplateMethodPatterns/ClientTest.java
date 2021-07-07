@@ -8,7 +8,7 @@ package com.xhh.DesignPatterns.Behavioral_Model_11.D010_TemplateMethodPatterns;
  *       (2) 如果用户信息正确，则根据用户类型的不同使用不同的利息计算公式计算利息（如活期账户和定期账户具有不同的利息计算公式）；
  *
  *       (3) 系统显示利息。
- *       
+ *
  */
 public class ClientTest {
 

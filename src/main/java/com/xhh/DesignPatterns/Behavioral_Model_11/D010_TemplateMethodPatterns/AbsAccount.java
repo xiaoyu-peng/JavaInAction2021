@@ -1,9 +1,5 @@
 package com.xhh.DesignPatterns.Behavioral_Model_11.D010_TemplateMethodPatterns;
 
-import org.apache.commons.lang.StringUtils;
-
-import java.io.Console;
-
 abstract class AbsAccount {
 
     /**
