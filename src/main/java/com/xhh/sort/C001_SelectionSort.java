@@ -4,6 +4,7 @@ import com.xhh.utils.ArraySwapUtil;
 
 /**
  * 选择排序
+ * 时间复杂度 O(n^2)
  */
 public class C001_SelectionSort {
 
@@ -29,6 +30,21 @@ public class C001_SelectionSort {
             System.out.print("第" + i + "次循环，数组遍历结果为：");
             ArraySwapUtil.printArray(arr);
         }
+    }
+
+    /**
+     * TODO 异或操作：相同为0，不同为1。
+     *      即，可以理解为"无进位相加"
+     *      1) 0 ^ N = N    N ^ N = 0
+     *      2) 满足交换、结合率
+     *         a ^ b = b ^ a
+     *         a ^ b ^ c = a ^ (b ^ c)
+     *
+     */
+    public void swapArray(int[] arr, int i, int j) {
+        arr[i] = arr[i] ^ arr[j];
+        arr[j] = arr[i] ^ arr[j];
+        arr[i] = arr[i] ^ arr[j];
     }
 
 }

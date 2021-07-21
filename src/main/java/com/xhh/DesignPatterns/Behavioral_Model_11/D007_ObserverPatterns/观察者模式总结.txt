@@ -1,4 +1,8 @@
-观察者模式(Observer Pattern)：定义对象之间的一种一对多依赖关系，使得每当一个对象状态发生改变时，其相关依赖对象皆得到通知并被自动更新。
+观察者模式(Observer Pattern)：
+    定义对象之间的一种一对多依赖关系，使得每当一个对象状态发生改变时，其相关依赖对象皆得到通知并被自动更新。
+    Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
+
+TODO 设计模式要干的事情就是解耦。创建型模式是将创建和使用代码解耦，结构型模式是将不同功能代码解耦，行为型模式是将不同的行为代码解耦，具体到观察者模式，它是将观察者和被观察者代码解耦。
 
 观察者模式的别名包括发布-订阅（Publish/Subscribe）模式、模型-视图（Model/View）模式、源-监听器（Source/Listener）模式或从属者（Dependents）模式。观察者模式是一种对象行为型模式。
 
@@ -63,3 +67,57 @@
       (2) 一个对象的改变将导致一个或多个其他对象也发生改变，而并不知道具体有多少对象将发生改变，也不知道这些对象是谁。
 
       (3) 需要在系统中创建一个触发链，A对象的行为将影响B对象，B对象的行为将影响C对象……，可以使用观察者模式创建一种链式触发机制。
+
+
+
+TODO 观察者模式  同步方式  异步方式
+
+异步方式：【两种实现方式。一种是：在每个 handleRegSuccess() 函数中创建一个新的线程执行代码逻辑；另一种是：在 UserController 的 register() 函数中使用线程池来执行每个观察者的 handleRegSuccess() 函数。】
+
+    // 第一种实现方式，其他类代码不变，就没有再重复罗列
+    public class RegPromotionObserver implements RegObserver {
+      private PromotionService promotionService; // 依赖注入
+
+      @Override
+      public void handleRegSuccess(Long userId) {
+        Thread thread = new Thread(new Runnable() {
+          @Override
+          public void run() {
+            promotionService.issueNewUserExperienceCash(userId);
+          }
+        });
+        thread.start();
+      }
+    }
+
+    // 第二种实现方式，其他类代码不变，就没有再重复罗列
+    public class UserController {
+      private UserService userService; // 依赖注入
+      private List<RegObserver> regObservers = new ArrayList<>();
+      private Executor executor;
+
+      public UserController(Executor executor) {
+        this.executor = executor;
+      }
+
+      public void setRegObservers(List<RegObserver> observers) {
+        regObservers.addAll(observers);
+      }
+
+      public Long register(String telephone, String password) {
+        //省略输入参数的校验代码
+        //省略userService.register()异常的try-catch代码
+        long userId = userService.register(telephone, password);
+
+        for (RegObserver observer : regObservers) {
+          executor.execute(new Runnable() {
+            @Override
+            public void run() {
+              observer.handleRegSuccess(userId);
+            }
+          });
+        }
+
+        return userId;
+      }
+    }

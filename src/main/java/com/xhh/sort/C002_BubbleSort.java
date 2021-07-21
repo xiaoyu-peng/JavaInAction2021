@@ -4,6 +4,8 @@ import com.xhh.utils.ArraySwapUtil;
 
 /**
  * 冒泡排序
+ *
+ * 时间复杂度 O(n^2)
  */
 public class C002_BubbleSort {
 
