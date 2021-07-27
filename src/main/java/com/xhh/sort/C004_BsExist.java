@@ -3,28 +3,28 @@ package com.xhh.sort;
 /**
  * 有序数组，验证二分
  */
-class C001_BsExist {
+class C004_BsExist {
 
-    public static boolean exist(int[] sortArr, int num) {
-        if (null == sortArr || sortArr.length == 0) {
+    public static boolean exist(int[] arr, int num) {
+        if (null == arr || arr.length == 0) {
             return false;
         }
 
         int L = 0;
-        int R = sortArr.length - 1;
+        int R = arr.length - 1;
         int mid = 0;
 
         while (L < R) {
             mid = L + (L + R) >> 1;
-            if (sortArr[mid] == num) {
+            if (arr[mid] == num) {
                 return true;
-            } else if (sortArr[mid] < num) {
+            } else if (arr[mid] < num) {
                 L = mid + 1;
             } else {
                 R = mid - 1;
             }
         }
 
-        return sortArr[L] == num;
+        return arr[L] == num;
     }
 }

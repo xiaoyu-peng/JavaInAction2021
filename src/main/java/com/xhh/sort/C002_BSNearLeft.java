@@ -1,5 +1,8 @@
 package com.xhh.sort;
 
+/**
+ * 有序数据组中，寻找 >= value的最左位置
+ */
 public class C002_BSNearLeft {
 
     /**
@@ -10,7 +13,8 @@ public class C002_BSNearLeft {
     public static int nearestLeftIndex(int[] arr, int value) {
         int L = 0;
         int R = arr.length - 1;
-        int index = -1; //记录最左的对号
+        //记录最左的对号
+        int index = -1;
 
         while (L <= R) {
             int mid = L + ((R - L) >> 1);
